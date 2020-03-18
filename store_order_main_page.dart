@@ -1,5 +1,3 @@
-import ...
-
 class _StoreOrderMainPageBody extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -67,11 +65,16 @@ class _StoreOrderMainPageState extends State<StoreOrderMainPage> with WidgetBind
 
   @override
   Widget build(BuildContext context) {
-    AccountBloc accountBloc;
 
-    try {
-      accountBloc = BlocProvider.of<AccountBloc>(context);
-    } catch (e) {}
+    
+    /// BlocProvider.value is used to provide existing bloc(s) to new routes
+    /// 
+    /// Navigator.of(context).push(MaterialPageRoute(
+    ///   builder: (BuildContext context) => BlocProvider.value(value: accountBloc, child: page),
+    /// ));
+    /// 
+    
+    AccountBloc accountBloc = BlocProvider.of<AccountBloc>(context);
 
     return Scaffold(
       backgroundColor: Colors.white,

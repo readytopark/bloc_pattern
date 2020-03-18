@@ -1,5 +1,3 @@
-import ...
-
 abstract class StoreOrderMainPageState extends Equatable {
   StoreOrderMainPageState([List props = const []]) : super(props);
 }
